@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
@@ -25,6 +25,24 @@
             , <&pro_micro 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
-
     };
+
+        default_layout: default_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "ONEKEY";
+
+        keys  //                     w   h    x    y     rot   rx   ry
+            = <&key_physical_attrs 105 100   77  151 (-1000)  130  201>
+            , <&key_physical_attrs 105 100  196   60  (-400)  249  110>
+            , <&key_physical_attrs 105 100  317    0       0    0    0>
+            , <&key_physical_attrs 105 100  423   49       0    0    0>
+            , <&key_physical_attrs 105 100  529   65       0    0    0>
+            , <&key_physical_attrs 105 100  868   65       0    0    0>
+            , <&key_physical_attrs 105 100  974   49       0    0    0>
+            , <&key_physical_attrs 105 100 1080    0       0    0    0>
+            , <&key_physical_attrs 105 100 1200   60     400 1253  110>
+            , <&key_physical_attrs 105 100 1319  152    1000 1372  202>
+            ;
+    };
+
 };
