@@ -1,8 +1,0 @@
-file_format: "1"
-id: onekey
-name: ONEKEY
-type: shield
-url: 
-requires: [pro_micro]
-features:
-  - keys
