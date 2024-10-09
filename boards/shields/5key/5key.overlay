@@ -52,7 +52,6 @@
             , <&key_physical_attrs 105 100  529   65       0    0    0>
             ;
     };
-    };
 
     encoder: encoder {
         compatible = "alps,ec11";
