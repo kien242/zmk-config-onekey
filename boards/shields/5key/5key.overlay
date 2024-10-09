@@ -42,6 +42,7 @@
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "LAYOUT";
+        transform = <&matrix_transform_0>
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>
             , <&key_physical_attrs 100 100  100    0       0     0     0>
@@ -49,15 +50,6 @@
             , <&key_physical_attrs 100 100  300    0       0     0     0>
             , <&key_physical_attrs 100 100  400    0       0     0     0>
             ;
-    };
-
- position_map {
-        compatible = "zmk,physical-layout-position-map";
-
-        layout_0 {
-            physical-layout = <&default_layout>;
-            positions = <1 2 3 4 5>;
-        };
     };
 
     encoder: encoder {
