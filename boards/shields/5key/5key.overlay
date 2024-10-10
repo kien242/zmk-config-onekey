@@ -52,6 +52,17 @@
             ;
     };
 
+    default_position_map: default_position_map {
+        compatible = "zmk,physical-layout-position-map";
+        complete;
+
+        default_layout_map {
+            physical-layout = <&default_layout>;
+            positions
+                = <0  1  2  3  4>;
+        };
+
+    };
     encoder: encoder {
         compatible = "alps,ec11";
         a-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
