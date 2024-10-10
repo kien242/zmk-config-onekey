@@ -23,7 +23,6 @@
                      &mo BLE      &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3   &kp NUMBER_4
                 // ╰─────────────┴──────────────┴──────────────────┴─────────────┴─────────────╯
               >;
-              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
 
             ble_layer {

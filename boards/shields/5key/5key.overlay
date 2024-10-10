@@ -41,8 +41,9 @@
 
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
-        display-name = "LAYOUT";
+        display-name = "default Layout";
         transform = <&matrix_transform_0>;
+        kscan = <&kscan_0>;
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>
             , <&key_physical_attrs 100 100  100    0       0     0     0>
@@ -56,24 +57,10 @@
         compatible = "zmk,physical-layout-position-map";
         complete;
 
-        default_layout_map {
+        default_map {
             physical-layout = <&default_layout>;
             positions
                 = <0  1  2  3  4>;
         };
-
-    };
-    encoder: encoder {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "okay";
-    };
-
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder>;
-        triggers-per-rotation = <20>;
     };
 };
