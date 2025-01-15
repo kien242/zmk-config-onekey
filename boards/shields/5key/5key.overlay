@@ -95,7 +95,7 @@ board_spi: &spi0 {
   compatible = "nordic,nrf-spim";
   pinctrl-0 = <&spi0_default>;
   pinctrl-1 = <&spi0_sleep>;
-  pinctrl-names = "default", "sleep";
+  pinctrl-names = "default";
     cs-gpios = <&gpio0 24 GPIO_ACTIVE_LOW> ;
 
 	st7735s160x80: st7735r@0 {
