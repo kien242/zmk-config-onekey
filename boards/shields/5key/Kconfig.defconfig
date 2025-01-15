@@ -8,5 +8,79 @@ config ZMK_KEYBOARD_NAME
 
 config SPI
     default y
-    
+
+config ZMK_DISPLAY
+	select LV_USE_CONT
+	select LV_FONT_MONTSERRAT_26
+
+if ZMK_DISPLAY
+
+config SYSTEM_WORKQUEUE_STACK_SIZE
+    default 2048
+
+config LV_Z_MEM_POOL_SIZE
+     default 4096
+
+choice LV_FONT_DEFAULT
+    default LV_FONT_DEFAULT_MONTSERRAT_26
+
+endchoice
+
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+
+config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
+    default 4096
+
+config ZMK_DISPLAY_DEDICATED_THREAD_PRIORITY
+    default 10
+
+choice ZMK_LV_FONT_DEFAULT_SMALL
+    default ZMK_LV_FONT_DEFAULT_SMALL_MONTSERRAT_26
+
+endchoice
+
+config ST7735R
+  default y if SHIELD_ST7735
+  default n  
+
+config LV_Z_BITS_PER_PIXEL
+	default 1
+
+choice LV_COLOR_DEPTH
+	default LV_COLOR_DEPTH_1
+
+endchoice
+
+config LV_DPI_DEF
+	default 161 if SHIELD_WEACT_EINK_154
+	default 161 if SHIELD_WEACT_EINK_213
+	default 161 if SHIELD_LS011B7DH03
+  default 142 if SHIELD_LS013B7DH03
+  default 161 
+
+config LV_Z_VDB_SIZE
+	default 100
+
+config DISP_WIDTH
+   int "width of the mip, sharp, memory display"
+   default 160
+
+config DISP_HEIGHT
+   int "height of the mip, sharp, memory display"
+   default 68
+
+config DISP_CANVAS
+   int "canvas size of the mip, sharp, memory display"
+   default 68
+
+config DISP_ROTATE
+   int "angle to rotate elements in screen mip, sharp, memory display in units of 0.1"
+   default 0
+
+
+endif # ZMK_DISPLAY
+
 endif
