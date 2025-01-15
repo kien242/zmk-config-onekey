@@ -64,3 +64,7 @@
         };
     };
 };
+
+&pro_micro_i2c {
+    status = "disabled";
+};
