@@ -1,4 +1,8 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
-config SHIELD_FIVEKEY
-    def_bool $(shields_list_contains,5key)
+
+if SHIELD_ONEKEY
+
+config ZMK_KEYBOARD_NAME
+    default "onekey"
+endif
