@@ -6,4 +6,7 @@ if SHIELD_FIVEKEY
 config ZMK_KEYBOARD_NAME
     default "5key"
 
+config SPI
+    default y
+    
 endif
